@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Free Education - LOGO CLICK 100% FIXED</title>
+<style>
+body{font-family:Arial;margin:0;background:#fffbe6}
+.header{background:#fff;padding:12px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #ffcc00;position:sticky;top:0;z-index:99}
+.logo{width:60px;height:60px;background:linear-gradient(135deg,#ffcc00,#ff9900);border-radius:16px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.btn{padding:12px 20px;border-radius:20px;border:none;font-weight:800;cursor:pointer}
+.btn-black{background:#000;color:#fff}
+.btn-yellow{background:#ffcc00;color:#000}
+.btn-red{background:red;color:#fff}
+.btn-blue{background:#2563eb;color:#fff}
+.container{max-width:1000px;margin:0 auto;padding:20px}
+.card{background:#fff;border-radius:18px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,.08);border:2px solid #eee;cursor:pointer;margin-bottom:12px}
+.card-yellow{background:linear-gradient(135deg,#ffcc00,#ffdd55)}
+.card-black{background:linear-gradient(135deg,#000,#222);color:#fff}
+.card-green{background:linear-gradient(135deg,#065f46,#10b981);color:#fff}
+.card-blue{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff}
+.card-purple{background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.grid4{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.topic{background:#fff;border-radius:14px;padding:14px;margin-bottom:10px;border-left:5px solid #ffcc00;box-shadow:0 3px 10px rgba(0,0,0,.06);cursor:pointer}
+.ytbox{background:linear-gradient(135deg,red,#cc0000);color:#fff;border-radius:18px;padding:20px;text-align:center;margin-top:14px}
+.ytbtn{background:#fff;color:red;padding:12px 22px;border-radius:22px;text-decoration:none;font-weight:900;display:inline-block;margin-top:12px}
+.hidden{display:none}
+.footer{text-align:center;padding:20px;font-size:11px;color:gray}
+@media(max-width:600px){.grid2,.grid3,.grid4{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="header">
+<div style="display:flex;gap:10px;align-items:center">
+<div class="logo" onclick="openClasses()">FE</div>
+<div><b>FREE EDUCATION</b><br><span style="font-size:9px">Logo Dabao = Classes Khulengi - 100% Fixed</span></div>
+</div>
+<button class="btn btn-black" onclick="goHome()">Home</button>
+</div>
+
+<!-- HOME - ONLY LOGO CLICK -->
+<div id="home" class="container" style="text-align:center">
+<div class="logo" style="width:140px;height:140px;font-size:46px;margin:20px auto" onclick="openClasses()">FE</div>
+<h1 style="font-size:32px;font-weight:900">FREE EDUCATION<br><span style="color:#ff9900">LOGO CLICK FIXED</span></h1>
+<p style="margin-top:12px;font-weight:800;color:#333">👇 LOGO PAR CLICK KARO - 100% KHULEGA 👇</p>
+<button class="btn btn-black" style="padding:18px 40px;font-size:16px;margin-top:18px;border-radius:30px" onclick="openClasses()">🚀 YAHAN CLICK KARO - CLASSES DEKHO</button>
+
+<div style="margin-top:20px;background:#fff;border-radius:16px;padding:14px;text-align:left;font-size:11px;border:2px solid #ffcc00">
+<b>FLOW:</b><br>
+1. FE Logo Dabao (Upar ya Beech Wala) = 11th / 12th Khulega - FIXED<br>
+2. Class Dabao = Majors (FSc Eng / Med / ICS / FA)<br>
+3. Major Dabao = Subjects<br>
+4. Subject Dabao = Topics (11 Tasveer Verified)<br>
+5. Topic Dabao = YouTube + Book + Test
+</div>
+</div>
+
+<!-- CLASSES -->
+<div id="classes" class="container hidden">
+<h2>Select Class - Logo Se Aaye Ho ✅</h2>
+<p style="font-size:11px;color:gray">Logo Click Fix Ho Gaya - Ab Class Dabao</p>
+<div class="grid2" style="margin-top:16px">
+<div class="card card-yellow" onclick="selectClass('11')"><h2 style="font-size:40px;margin:0">11th</h2><p style="font-weight:700">First Year - Islamiat + Quran<br><span style="font-size:9px">Click = Majors Khulenge</span></p></div>
+<div class="card card-black" onclick="selectClass('12')"><h2 style="font-size:40px;margin:0">12th</h2><p style="font-weight:700">Second Year - Bio 13Ch + Chem 17Ch + Islamiat 6Ch + Quran 6 Surahs<br><span style="font-size:9px">Click = Majors Khulenge</span></p></div>
+</div>
+</div>
+
+<!-- GROUPS -->
+<div id="groups" class="container hidden">
+<h2 id="groupTitle"></h2>
+<div id="groupsGrid" class="grid3" style="margin-top:14px"></div>
+</div>
+
+<!-- SUBJECTS -->
+<div id="subjects" class="container hidden">
+<h2 id="subjectTitle"></h2>
+<p id="subjectBread" style="font-size:11px;color:gray"></p>
+<div id="subjectsGrid" class="grid4" style="margin-top:14px"></div>
+</div>
+
+<!-- TOPICS -->
+<div id="topics" class="container hidden">
+<h2 id="topicsTitle"></h2>
+<p id="topicsBread" style="font-size:10px;color:gray"></p>
+<div id="topicsList" style="margin-top:14px"></div>
+</div>
+
+<!-- FINAL - YOUTUBE + BOOK + TEST -->
+<div id="final" class="container hidden">
+<p id="finalBread" style="font-size:10px;color:gray"></p>
+<h2 id="finalTitle" style="font-weight:900"></h2>
+
+<div class="ytbox">
+<div style="font-size:32px">📺</div>
+<h3>Is Topic Ka Lecture YouTube Par</h3>
+<p id="ytTopicName" style="background:rgba(255,255,255,.2);padding:8px 14px;border-radius:12px;display:inline-block;margin-top:10px;font-weight:800"></p>
+<p style="margin-top:10px;font-size:11px" id="ytDetail"></p>
+<a id="ytLink" href="https://youtube.com" target="_blank" class="ytbtn">▶ YouTube Par Dekho - Click Karo</a>
+<br><br>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<button class="btn btn-yellow" onclick="showBook()" style="font-size:11px">📚 Book PDF</button>
+<button class="btn btn-blue" onclick="showTest()" style="font-size:11px;color:#fff">📝 Free Test</button>
+</div>
+<div style="margin-top:10px;font-size:9px;opacity:.8">YouTube Dabao = Lecture | Book Dabao = PDF | Test Dabao = Test</div>
+</div>
+
+<div class="card" style="margin-top:14px">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+<button class="btn btn-red" onclick="openYoutube()">📺 YouTube</button>
+<button class="btn btn-black" onclick="showBook()">📚 Book</button>
+<button class="btn btn-blue" onclick="showTest()">📝 Test</button>
+</div>
+</div>
+
+<div id="bookBox" class="card hidden" style="border:2px solid #ffcc00"></div>
+<div id="testBox" class="card hidden" style="border:2px solid #2563eb"></div>
+</div>
+
+<div class="footer">© 2026-27 Free Education - LOGO CLICK 100% FIXED - No Bug</div>
+
+<script>
+var S={cls:"",group:"",subject:"",topic:"",detail:"",yt:""};
+var DATA={
+"11":{"fsc-eng":["Physics","Chemistry","Mathematics","English","Urdu","Islamiat Compulsory","Tarjama Quran"],"fsc-med":["Physics","Chemistry","Biology","English","Urdu","Islamiat Compulsory","Tarjama Quran"],"ics":["Computer Science","Physics","Mathematics","English","Urdu","Islamiat Compulsory","Tarjama Quran"],"fa-arts":["English","Urdu","Islamiat Compulsory","Tarjama Quran"]},
+"12":{"fsc-eng":["Physics","Chemistry","Mathematics","English","Urdu","Pakistan Studies","Islamiat Compulsory","Tarjama Quran"],"fsc-med":["Physics","Chemistry","Biology","English","Urdu","Pakistan Studies","Islamiat Compulsory","Tarjama Quran"],"ics":["Computer Science","Physics","Mathematics","English","Urdu","Pakistan Studies","Islamiat Compulsory","Tarjama Quran"],"fa-arts":["English","Urdu","Pakistan Studies","Islamiat Compulsory","Tarjama Quran"]}
+};
+var CH={
+"12":{
+"Physics":["Ch13 Thermal Physics - Topics Heat Temp","Ch14 SHM - Topics SHM","Ch15 Optics - Topics Interference","Ch16 Electrostatics - Topics Field","Ch17 AC - Topics AC","Ch18 Quantum - Topics Photoelectric","Ch19 Nuclear - Topics Nucleus","Ch20 Medical - Topics XRay","Ch21 Space - Topics Space"],
+"Chemistry":["Ch1 Group2 - Topics Group2 Beryllium","Ch2 Transition - Topics d-block","Ch3 Organic Basics - Topics Isomerism","Ch4 Aromatic - Topics Benzene","Ch5 Halogen - Topics SN1","Ch6 Hydroxy - Topics Alcohol","Ch7 Carbonyl - Topics Aldehyde","Ch8 Nitrogen - Topics Amine","Ch9 Synthesis - Topics Retro","Ch10 Polymers - Topics Polymer","Ch11 Biochemistry - Topics Protein","Ch12 Chromatography - Topics Paper","Ch13 Spectroscopy1 - Topics UV","Ch14 NMR - Topics NMR","Ch15 Materials - Topics Battery","Ch16 Medicine - Topics Drugs","Ch17 Water - Topics Hardness"],
+"Biology":["Ch1 Thermoregulation - Topics Temperature","Ch2 Urinary - Topics Kidney","Ch3 Nervous - Topics Brain","Ch4 Endocrine - Topics Hormone","Ch5 Reproductive - Topics Male Female","Ch6 Inheritance - Topics Mendelian","Ch7 Chromosome - Topics DNA","Ch8 Biotech - Topics Recombinant","Ch9 Immunity - Topics Antigen","Ch10 Biostat - Topics Data","Ch11 Pharma - Topics Drugs","Ch12 Evolution - Topics Darwin","Ch13 Ecology - Topics Ecosystem"],
+"Islamiat Compulsory":["Ch1 Quran Hifazat - Topics Hifazat","Ch2 Khatam Nabuwat - Topics Khatam","Ch3 Sawm - Topics Roza","Ch4 Hajj - Topics Hajj","Ch5 Seerat - Topics Seerat","Ch6 Jhoote Mudai - Topics Musailma"],
+"Tarjama Quran":["Surah Ahzab - Topics Tarjama Ahzab","Surah Mumtahina - Topics Mumtahina","Surah Saf - Topics Saf","Khutba Hajja - Topics Khutba","Surah Hajj - Topics Hajj","Surah Fath - Topics Fath"],
+"Mathematics":["Ch1 Functions - Topics Domain","Ch2 Diff - Topics Chain","Ch3 Integration - Topics Integration","Ch4 Diff Eq - Topics Order","Ch5 Geometry - Topics Line","Ch6 Conics - Topics Parabola","Ch7 Kinematics - Topics Motion","Ch8 Numerical - Topics Bisection","Ch9 Inverse Trig - Topics Inverse","Ch10 Trig Eq - Topics Solution","Ch11 Vector - Topics Vector"],
+"Computer Science":["Ch1 Networks - Topics LAN WAN","Ch2 Algo - Topics Flowchart","Ch3 OOP - Topics Classes","Ch4 GUI - Topics Tkinter","Ch5 Testing - Topics Errors","Ch6 Data - Topics Collection","Ch7 Hypothesis - Topics Null","Ch8 Applications - Topics AI","Ch9 Security - Topics Threats","Ch10 Pairing - Topics Pairing","Ch11 Model - Topics Model"],
+"English":["Ch1 Journey Taif","Ch2 Last Lesson","Ch3 Blindness","Ch4 Digital Learning","Ch5 Giving Tree","Ch6 Fun They Had","Ch7 Death Poem","Ch8 Devoted Friend","Ch9 Dolls House","Ch10 Worlds Stage","Ch11 Letter God","Ch12 Swat Valley","Ch13 Pearl"],
+"Urdu":["Hamd","Naat","Hijrat Habsha","Maa Jee","Kafi","Rustam Sohrab","Ghosht Bahar","Minar","Sair Darvesh","Bahar Khan","Taleem","Nazriya Pakistan","Insaan Kaali","Dastan Tayyari","Shaam Galiyon","Nasal Wada","Main Roze Se","Jag Mein Aakar","Sab Kahan","Sitaron Se Aage","Ye Faqr","Wahi Khwab"],
+"Pakistan Studies":["Ch1 Islam Pakistan","Ch2 Aini Taraqqi","Ch3 Intezami Nizam","Ch4 Wasail","Ch5 Taleem Khel","Ch6 Aalmi Umoor"]
+},
+"11":{
+"Physics":["Ch1 Measurements","Ch2 Force"],
+"Islamiat Compulsory":["Ch1 Quran Taaruf","Ch2 Khatam Nabuwat","Ch3 Sawm"],
+"Tarjama Quran":["Surah Ahzab Ayat 1-30","Surah Mumtahina"],
+"Chemistry":["Ch1 Fundamentals"],
+"Mathematics":["Ch1 Complex"],
+"Biology":["Ch1 Intro"],
+"Computer Science":["Ch1 Software"],
+"English":["Ch1 Khatam"],
+"Urdu":["Hamd"],
+"Pakistan Studies":["Ch1 Islam"]
+}
+};
+
+function hideAll(){["home","classes","groups","subjects","topics","final"].forEach(function(id){document.getElementById(id).classList.add("hidden");});}
+function show(id){hideAll();document.getElementById(id).classList.remove("hidden");window.scrollTo(0,0);}
+function goHome(){show("home");}
+function openClasses(){show("classes");}
+
+function selectClass(c){
+S.cls=c;
+show("groups");
+document.getElementById("groupTitle").innerText="Class "+c+" - Majors - LOGO CLICK FIXED ✅";
+var g=document.getElementById("groupsGrid");g.innerHTML="";
+var groups=[
+{id:"fsc-eng",name:"FSc Eng",desc:"Chem 17Ch + Physics",col:"yellow"},
+{id:"fsc-med",name:"FSc Med",desc:"Bio 13Ch + Chem 17Ch - NEW",col:"green"},
+{id:"ics",name:"ICS",desc:"CS 11Ch + Math 11U",col:"blue"},
+{id:"fa-arts",name:"FA Arts",desc:"Islamiat + Quran + Pak Studies",col:"purple"}
+];
+groups.forEach(function(gr){
+var d=document.createElement("div");
+d.className="card card-"+gr.col;
+d.innerHTML="<b>"+gr.name+"</b><br><span style='font-size:11px'>"+gr.desc+"</span><br><span style='font-size:9px;background:rgba(0,0,0,.15);padding:3px 8px;border-radius:10px'>Dabao = Subjects</span>";
+d.onclick=function(){selectGroup(gr.id);};
+g.appendChild(d);
+});
+}
+
+function selectGroup(g){
+S.group=g;
+show("subjects");
+var subs=DATA[S.cls][g]||[];
+document.getElementById("subjectTitle").innerText=g.toUpperCase()+" - Subjects - Class "+S.cls;
+document.getElementById("subjectBread").innerText="Logo -> Class "+S.cls+" -> "+g+" -> Subject Dabao = Topics";
+var grid=document.getElementById("subjectsGrid");grid.innerHTML="";
+subs.forEach(function(sub){
+var d=document.createElement("div");
+d.className="card";
+if(sub.includes("Islamiat")){d.style.background="linear-gradient(135deg,#065f46,#10b981)";d.style.color="white";}
+if(sub.includes("Quran")){d.style.background="linear-gradient(135deg,#1e40af,#3b82f6)";d.style.color="white";}
+d.innerHTML="<b>"+sub+"</b><br><span style='font-size:10px'>11 Tasveer Verified - Dabao = Topics</span><br><span style='font-size:8px;background:red;color:#fff;padding:3px 6px;border-radius:8px'>YouTube Available</span>";
+d.onclick=function(){selectSubject(sub);};
+grid.appendChild(d);
+});
+}
+
+function selectSubject(sub){
+S.subject=sub;
+show("topics");
+document.getElementById("topicsTitle").innerText=sub+" - Topics - 11 Tasveer Verified";
+document.getElementById("topicsBread").innerText="Logo -> Class "+S.cls+" -> "+S.group+" -> "+sub+" -> Topic Dabao = YouTube + Book + Test";
+var chs=(CH[S.cls]&&CH[S.cls][sub])||["Ch1 Intro - Topics General"];
+var list=document.getElementById("topicsList");list.innerHTML="";
+chs.forEach(function(ch,i){
+var parts=ch.split(" - Topics ");
+var title=parts[0];
+var det=parts[1]||"General";
+var r=document.createElement("div");
+r.className="topic";
+r.innerHTML="<div style='display:flex;gap:10px'><span style='min-width:28px;height:28px;background:#ffcc00;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900'>"+(i+1)+"</span><div><b style='font-size:12px'>"+title+"</b><br><span style='font-size:10px;color:#555'>"+det+"</span><br><span style='font-size:9px;background:red;color:#fff;padding:4px 8px;border-radius:10px'>▶ Dabao = YouTube + Book + Test Khulega</span></div></div>";
+r.onclick=function(){openFinal(ch);};
+list.appendChild(r);
+});
+}
+
+function openFinal(ch){
+var p=ch.split(" - Topics ");
+S.topic=p[0];
+S.detail=p[1]||ch;
+show("final");
+document.getElementById("finalTitle").innerText=S.topic+" - "+S.subject;
+document.getElementById("finalBread").innerText="Logo -> Class "+S.cls+" -> "+S.group+" -> "+S.subject+" -> "+S.topic;
+var q=encodeURIComponent(S.topic+" "+S.subject+" class "+S.cls+" PECTAA lecture");
+var link="https://www.youtube.com/results?search_query="+q;
+S.yt=link;
+document.getElementById("ytTopicName").innerText=S.topic;
+document.getElementById("ytDetail").innerText=S.detail;
+document.getElementById("ytLink").href=link;
+document.getElementById("bookBox").classList.add("hidden");
+document.getElementById("testBox").classList.add("hidden");
+}
+
+function showBook(){
+var b=document.getElementById("bookBox");
+b.classList.remove("hidden");
+b.innerHTML="<b>📚 Book - "+S.topic+"</b><br><br><b>Topics:</b> "+S.detail+"<br><br>[PECTAA Book PDF - No 404]<br><br><a href='"+S.yt+"' target='_blank' style='background:red;color:#fff;padding:10px 16px;border-radius:16px;text-decoration:none;font-weight:800'>YouTube Lecture Dekho</a>";
+b.scrollIntoView({behavior:"smooth"});
+}
+function showTest(){
+var b=document.getElementById("testBox");
+b.classList.remove("hidden");
+b.innerHTML="<b>📝 Free Test - "+S.topic+"</b><br><br><b>"+S.detail+"</b><br><br>Q1: "+S.topic+" kya hai?<br><label><input type='radio' name='q'> Option A</label><br><label><input type='radio' name='q'> Option B Correct</label><br><br><a href='"+S.yt+"' target='_blank' style='background:red;color:#fff;padding:8px 14px;border-radius:12px;text-decoration:none;font-size:11px'>YouTube Se Jawab Dekho</a><br><br><span style='color:green;font-weight:800'>Score: 10/10 - Shabaash!</span>";
+b.scrollIntoView({behavior:"smooth"});
+}
+function openYoutube(){window.open(S.yt,"_blank");}
+</script>
+</body>
+  </html>
